@@ -1,0 +1,27 @@
+Package: robustDAA
+Type: Package
+Title: Robust Differential Abundance Analysis of Microbiome Sequencing Data
+Version: 0.1.0
+Author: c(person("Guanxun", "Li", email = "guanxun@stat.tamu.edu", role = c("aut", "cre")),
+          person("Lu", "Yang", role = c("aut")),
+          person("Jun", "Chen", role = c("aut")),
+          person("Xianyang", "Zhang", role = c("aut")))
+Description: Robust Differential Abundance Analysis of Microbiome Sequencing Data.
+Maintainer: Guanxun Li <guanxun@stat.tamu.edu>
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.6)
+Imports:
+    MASS,
+    stats,
+    modeest,
+    quantreg,
+    lme4,
+    robustlmm,
+    lmerTest,
+    pbkrtest
+Suggests: 
+    testthat (>= 2.1.0)
+RoxygenNote: 7.2.3
