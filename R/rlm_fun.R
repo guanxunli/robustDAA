@@ -120,9 +120,9 @@ rlm_fun <- function(otu_tab, meta, formula, adaptive = TRUE, imputation = FALSE,
       for (iter_m in seq_len(m)) {
         w_tmp <- W[, iter_m]
         fit <- rlm(formula_use, data = meta, psi = "psi.huber", maxit = 50, k = hyper_para)
-        alpha_vec[iter_m] <- coef(fit)["u1"]
+        alpha_vec[iter_m] <- coef(fit)[2]
         summary_fit <- summary(fit)
-        sd_alpha[iter_m] <- coef(summary_fit)["u1", 2]
+        sd_alpha[iter_m] <- coef(summary_fit)[2, 2]
       }
       #### mode correction
       # bias <- median(alpha_vec)
@@ -152,9 +152,9 @@ rlm_fun <- function(otu_tab, meta, formula, adaptive = TRUE, imputation = FALSE,
       for (iter_m in seq_len(m)) {
         w_tmp <- W[, iter_m]
         fit <- rlm(formula_use, data = meta, psi = "psi.bisquare", maxit = 50, c = hyper_para)
-        alpha_vec[iter_m] <- coef(fit)["u1"]
+        alpha_vec[iter_m] <- coef(fit)[2]
         summary_fit <- summary(fit)
-        sd_alpha[iter_m] <- coef(summary_fit)["u1", 2]
+        sd_alpha[iter_m] <- coef(summary_fit)[2, 2]
       }
       #### mode correction
       # bias <- median(alpha_vec)

@@ -115,9 +115,9 @@ qr_fun <- function(otu_tab, meta, formula, adaptive = TRUE, imputation = FALSE,
     for (iter_m in seq_len(m)) {
       w_tmp <- W[, iter_m]
       fit <- rq(formula_use, tau = tau, data = Z)
-      alpha_vec[iter_m] <- coef(fit)["u1"]
+      alpha_vec[iter_m] <- coef(fit)[2]
       summary_fit <- summary(fit, se = "boot", R = 500)
-      sd_alpha[iter_m] <- coef(summary_fit)["u1", 2]
+      sd_alpha[iter_m] <- coef(summary_fit)[2, 2]
     }
     #### mode correction
     # bias <- median(alpha_vec)
